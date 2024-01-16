@@ -1,2 +1,2 @@
 # Infinityincbd
-It's a client website.
+It's a client gaming website.
