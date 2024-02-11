@@ -122,34 +122,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
         <div class="top-game-grids">
             <ul id="flexiselDemo1">
-                <li>
-                    <div class="game-grid">
-                        <h4>Action Games</h4>
-                        <p>Nulla elementum nunc tempus.</p>
-                        <img src="{{asset('images/t1.jpg')}}" class="img-responsive" alt=""/>
-                    </div>
-                </li>
-                <li>
-                    <div class="game-grid">
-                        <h4>Racing Games</h4>
-                        <p>Nulla elementum nunc tempus.</p>
-                        <img src="{{asset('images/t3.jpg')}}" class="img-responsive" alt=""/>
-                    </div>
-                </li>
-                <li>
-                    <div class="game-grid">
-                        <h4>3D Games</h4>
-                        <p>Nulla elementum nunc tempus.</p>
-                        <img src="{{asset('images/t4.jpg')}}" class="img-responsive" alt=""/>
-                    </div>
-                </li>
-                <li>
-                    <div class="game-grid">
-                        <h4>Arcade Games</h4>
-                        <p>Nulla elementum nunc tempus.</p>
-                        <img src="{{asset('images/t2.jpg')}}" class="img-responsive" alt=""/>
-                    </div>
-                </li>
+                @foreach($top as $tops)
+                    <li>
+                        <div class="game-grid">
+                            <h4>{{$tops->title}}</h4>
+                            <p>{{$tops->subtitle}}</p>
+                            <img src="{{asset('storage/'.$tops->pics)}}" class="img-responsive" alt=""/>
+                        </div>
+                    </li>
+                @endforeach
+
+
             </ul>
 
             <script type="text/javascript">
