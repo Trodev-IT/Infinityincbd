@@ -17,6 +17,10 @@ class Homepage extends Controller
 
         $topgames = DB::table('top_games')->get();
 
-        return view('welcome',['pics'=>$pics,'top'=>$topgames]);
+        $latest = DB::table('latest_games')->get();
+
+        $youtube = DB::table('you_tubes')->where('Status','On')->first();
+
+        return view('welcome',['pics'=>$pics,'top'=>$topgames,'latest'=>$latest,'youtube'=>$youtube]);
     }
 }
