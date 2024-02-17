@@ -23,4 +23,14 @@ class Homepage extends Controller
 
         return view('welcome',['pics'=>$pics,'top'=>$topgames,'latest'=>$latest,'youtube'=>$youtube]);
     }
+
+    public function aboutus()
+    {
+        $about = DB::table('about_us')->first();
+
+        $testimonials = DB::table('testimonials')->get();
+
+        $teams = DB::table('teams')->get();
+        return view('aboutus',['about'=>$about,'testimonial'=>$testimonials,'teams'=>$teams]);
+    }
 }

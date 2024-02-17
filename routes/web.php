@@ -19,3 +19,5 @@ use App\Http\Controllers\Homepage;
 //});
 
 Route::get('/',[Homepage::class,'welcome'])->name('welcome');
+
+Route::get('/aboutus',[Homepage::class,'aboutus'])->name('aboutus');
