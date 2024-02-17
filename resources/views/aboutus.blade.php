@@ -57,12 +57,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="banner-info">
     <div class="container">
         <div class="logo">
-            <h1><a href="index.html">Adventure Gaming</a></h1>
+            <h1><a href="{{route('welcome')}}">InfinityincBD</a></h1>
         </div>
         <div class="top-menu">
             <span class="menu"></span>
             <ul class="nav1">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{route('welcome')}}">Home</a></li>
                 <li class="active"><a href="about.html">About</a></li>
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="typo.html">News</a></li>
