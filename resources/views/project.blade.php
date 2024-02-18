@@ -95,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              @foreach($project as $proj)
 				 <div class="col-md-4 sed-md">
 				 	 <div class=" col-1">
-						 <a href="single.html"><img class="img-responsive" src="{{asset('storage/'.$proj->image)}}" alt=""></a>
+						 <a href="{{route('singlepage',['id'=>$proj->id])}}"><img class="img-responsive" src="{{asset('storage/'.$proj->image)}}" alt=""></a>
 					 	<h4><a href="single.html">{{$proj->title}}</a></h4>
 					 </div>
 				 </div>

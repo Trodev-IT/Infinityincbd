@@ -39,4 +39,10 @@ class Homepage extends Controller
         $project = DB::table('projects')->get();
         return view ('project',['project'=>$project]);
     }
+    public function singlepage($id)
+    {
+        $project=DB::table('projects')->find($id);
+        return view ('singlepage',['id'=>$project]);
+    }
 }
+

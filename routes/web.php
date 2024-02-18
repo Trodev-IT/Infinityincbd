@@ -23,3 +23,5 @@ Route::get('/',[Homepage::class,'welcome'])->name('welcome');
 Route::get('/aboutus',[Homepage::class,'aboutus'])->name('aboutus');
 
 Route::get('/projectbase',[Homepage::class,'projectbase'])->name('project');
+
+Route::get('/singlepage/{id}',[Homepage::class,'singlepage'])->name('singlepage');
