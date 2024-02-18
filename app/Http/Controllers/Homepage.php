@@ -36,6 +36,7 @@ class Homepage extends Controller
 
     public function projectbase()
     {
-        return view ('project');
+        $project = DB::table('projects')->get();
+        return view ('project',['project'=>$project]);
     }
 }
