@@ -1,16 +1,14 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
--->
+
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Adventure Gaming a Games a Category Flat Bootstarp Responsive Website Template | About :: w3layouts</title>
+    <title>Adventure Gaming a Games a Category Flat Bootstarp Responsive Website Template | Gallery :: w3layouts</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
-    <script src="{{asset('js/bootstrap.js')}}"></script>
     <!-- Custom Theme files -->
     <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
+
     <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +18,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
-
 </head>
 <body>
 <!-- header -->
@@ -57,16 +54,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="banner-info">
     <div class="container">
         <div class="logo">
-            <h1><a href="{{route('welcome')}}">InfinityincBD</a></h1>
+            <h1><a href="index.html">Adventure Gaming</a></h1>
         </div>
         <div class="top-menu">
             <span class="menu"></span>
             <ul class="nav1">
                 <li><a href="{{route('welcome')}}">Home</a></li>
-                <li class="active"><a href="{{route('aboutus')}}">About</a></li>
+                <li><a href="{{route('aboutus')}}">About</a></li>
                 <li><a href="{{route('project')}}">Project</a></li>
-{{--                <li><a href="typo.html">News</a></li>--}}
-                <li><a href="{{route('gallary')}}">Gallery</a></li>
+                <li class="active"><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Mail</a></li>
             </ul>
         </div>
@@ -87,50 +83,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="bnr2">
     </div>
 </div>
-<!-- About -->
-<div class="about">
+<!---->
+<div class="gallery">
     <div class="container">
-        <h2>About</h2>
-        <div class="about-info-grids">
-            <div class="col-md-5 abt-pic">
-                <img src="{{asset('storage/'.$about->image)}}" class="img-responsive" alt=""/>
-            </div>
-            <div class="col-md-7 abt-info-pic">
-                <h3>{{$about->title}}</h3>
-                <p>{!! $about->subtitle !!}</p>
-
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="testimonals">
-            <h3>Testimonals</h3>
-            <div class="testimonal-grids">
-                @foreach($testimonial as $testi)
-                <div class="col-md-4 testimonal-grid">
-                    <div class="testi-info">
-                        <p>{{$testi->title}}</p>
-                        <h4>{{$testi->name}}</h4>
-
-                    </div>
+        <h2>Gallery</h2>
+        <div class="gallery-bottom">
+            <div class="gallery-1">
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/r4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r4.jpg" alt=""/></a>
                 </div>
-                @endforeach
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl7.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl4.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl5.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl5.jpg" alt=""/></a>
+                </div>
                 <div class="clearfix"></div>
             </div>
-        </div>
-        <div class="team">
-            <h3>Our Team</h3>
-            @foreach($teams as $team)
-            <div class="grid_4">
-                <div class="team-grid">
-                    <img src="{{asset('storage/'.$team->image)}}" alt="">
-                    <h4>{{$team->name}}</h4>
-                    <p>{{$team->description}}</p>
+            <div class="gallery-1">
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl6.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl6.jpg" alt=""/></a>
                 </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl2.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl2.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/r6.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r6.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl7.jpg" alt=""/></a>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            @endforeach
+            <div class="gallery-1">
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl4.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/r3.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r3.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/r4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/r4.jpg" alt=""/></a>
+                </div>
+                <div class="col-md-3 gallery-grid">
+                    <a class="example-image-link" href="images/gl11.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl11.jpg" alt=""/></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
 
-
-            <div class="clearfix"></div>
         </div>
     </div>
 </div>
@@ -182,9 +185,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p> © 2020 Adventure Gaming. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
     </div>
 </div>
+
+<script src="{{asset('js/lightbox-plus-jquery.min.js')}}"></script>
+
+
+<script src="{{asset('js/bootstrap.js')}}"></script>
 <!---->
-
-
-
 </body>
 </html>

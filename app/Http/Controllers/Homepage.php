@@ -44,5 +44,10 @@ class Homepage extends Controller
         $project=DB::table('projects')->find($id);
         return view ('singlepage',['id'=>$project]);
     }
+
+    public function gallary()
+    {
+        return view('gallary');
+    }
 }
 
