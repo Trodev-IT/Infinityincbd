@@ -15,7 +15,7 @@ Author URL: http://w3layouts.com
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Adventure Gaming  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Adventure Gaming  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -27,17 +27,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header">
 	 <div class="container">
 		 <div class="headr-left">
-			 <div class="social">							
+			 <div class="social">
 					<a href="#"><i class="facebook"></i></a>
 					<a href="#"><i class="twitter"></i></a>
-					<a href="#"><i class="gplus"></i></a>	
-					<a href="#"><i class="pin"></i></a>	
-					<a href="#"><i class="youtube"></i></a>	
+					<a href="#"><i class="gplus"></i></a>
+					<a href="#"><i class="pin"></i></a>
+					<a href="#"><i class="youtube"></i></a>
 			 </div>
 			 <div class="search">
 				 <form>
 					 <input type="submit" value="">
-					 <input type="text" value="" placeholder="Search...">					 
+					 <input type="text" value="" placeholder="Search...">
 				 </form>
 			 </div>
 			 <div class="clearfix"></div>
@@ -53,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="clearfix"></div>
 	 </div>
 </div>
-<!--banner-info-->	
+<!--banner-info-->
 <div class="banner-info">
 	  <div class="container">
 		  <div class="logo">
@@ -62,14 +62,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 <div class="top-menu">
 		     <span class="menu"></span>
 			  <ul class="nav1">
-					 <li><a href="index.html">Home</a></li>
-					 <li><a href="about.html">About</a></li>
-					 <li class="active"><a href="reviews.html">Reviews</a></li>
+					 <li><a href="{{route('welcome')}}">Home</a></li>
+					 <li><a href="{{route('aboutus')}}">About</a></li>
+					 <li class="active"><a href="{{route('project')}}">Reviews</a></li>
 					 <li><a href="typo.html">News</a></li>
 					 <li><a href="gallery.html">Gallery</a></li>
 					 <li><a href="contact.html">Mail</a></li>
 			  </ul>
-		 </div>	
+		 </div>
 <!-- script-for-menu -->
 					<script>
 						 $( "span.menu" ).click(function() {
@@ -78,14 +78,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							});
 							});
 					</script>
-				<!-- /script-for-menu -->		 
+				<!-- /script-for-menu -->
 		 <div class="clearfix"></div>
 	 </div>
 </div>
 <!-- banner -->
-<div class="banner">		  			
-		<div class="bnr2">						  
-	   </div>			 
+<div class="banner">
+		<div class="bnr2">
+	   </div>
 </div>
 <!---->
 <div class="blog">
@@ -95,99 +95,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="blog-info-text">
 						<div class="blog-img">
 							<img src="{{asset('storage/'.$id->image)}}" alt=""/>
-						</div>						
-						<p class="snglp">{!! $id->description !!}                            
-                        </p>						
+						</div>
+						<p class="snglp">{!! $id->description !!}
+                        </p>
 					</div>
-					<div class="comment-icons">
+					<div class="comment-icons" style="margin: 0 auto; text-align: center;">
 						<ul>
-							<li><span></span><a href="#">Lorem ipsum dolor sit</a> </li>
-							<li><span class="clndr"></span>MARCH 1, 2013</li>
-							<li><span class="admin"></span> <a href="#">Admin</a></li>
-							<li><span class="cmnts"></span> <a href="#">5 comments</a></li>
-							<li><a href="#" class="like">15</a></li>
+							<li><span class="clndr"></span>{{$id->created_at}}</li>
 						</ul>
 					</div>
-					<div class="response">
-						<h4>Responses</h4>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt=""/>
-								</a>
-								<h5><a href="#">Admin</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<ul>
-									<li>MARCH 21, 2013</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>
-								<div class="media response-info">
-									<div class="media-left response-text-left">
-										<a href="#">
-											<img class="media-object" src="images/icon1.png" alt=""/>
-										</a>
-										<h5><a href="#">Admin</a></h5>
-									</div>
-									<div class="media-body response-text-right">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-											sed do eiusmod tempor incididunt ut labore et.</p>
-										<ul>
-											<li>MARCH 21, 2014</li>
-											<li><a href="single.html">Reply</a></li>
-										</ul>		
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="media response-info">
-							<div class="media-left response-text-left">
-								<a href="#">
-									<img class="media-object" src="images/icon1.png" alt=""/>
-								</a>
-								<h5><a href="#">Admin</a></h5>
-							</div>
-							<div class="media-body response-text-right">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-								<ul>
-									<li>MARCH 21, 2013</li>
-									<li><a href="single.html">Reply</a></li>
-								</ul>		
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
 				</div>
-				<div class="coment-form">
-					<h4>Leave your comment</h4>
-					<form>
-						<input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-						<input type="text" value="Subject " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-						<input type="text" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
-						<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Your Comment...</textarea>
-						<input type="submit" value="SUBMIT" >
-					</form>
-				</div>
-			</div>	
+
+			</div>
 			<div class="col-md-4 single-page-right">
-				<div class="category blog-ctgry">
-					<h4>Top Games</h4>
-					<div class="list-group">
-						<a href="single.html" class="list-group-item">Cras justo odio</a>
-						<a href="single.html" class="list-group-item">Dapibus ac facilisis in</a>
-						<a href="single.html" class="list-group-item">Morbi leo risus</a>
-						<a href="single.html" class="list-group-item">Porta ac consectetur ac</a>
-						<a href="single.html" class="list-group-item">Vestibulum at eros</a>
-						<a href="single.html" class="list-group-item">Cras justo odio</a>
-						<a href="single.html" class="list-group-item">Cras justo odio</a>
-						<a href="single.html" class="list-group-item">Cras justo odio</a>
-					</div>
-				</div>	
+
 				<div class="recent-posts">
 					<h4>Recent posts</h4>
 					<div class="recent-posts-info">
@@ -201,32 +122,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="single.html" class="btn btn-primary hvr-rectangle-in">Read More</a>
 						</div>
 						<div class="clearfix"> </div>
-					</div>	
-					<div class="recent-posts-info">
-						<div class="posts-left sngl-img">
-							<a href="single.html"> <img src="images/img17.jpg" class="img-responsive zoom-img" alt=""/></a>
-						</div>
-						<div class="posts-right">
-							<label>March 1, 2020</label>
-							<h5><a href="single.html">Finibus Bonorum</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing incididunt.</p>
-							<a href="single.html" class="btn btn-primary hvr-rectangle-in">Read More</a>
-						</div>
-						<div class="clearfix"> </div>
 					</div>
 					<div class="clearfix"> </div>
-				</div>				
+				</div>
 			</div>
 			<div class="clearfix"> </div>
-		</div>	
-</div>	
+		</div>
+</div>
 <!-- footer -->
 <div class="footer">
 	 <div class="container">
 		 <div class="footer-grids">
 			 <div class="col-md-3 ftr-info">
 				 <h3>About Us</h3>
-				 <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus. 
+				 <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus.
 				 Suspendisse pharetra, metus sed rutrum pretium.</p>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
@@ -237,27 +146,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="#">Adventure</a></li>
 					 <li><a href="#">Simulation</a></li>
 					 <li><a href="#">Bike</a></li>
-				 </ul>				 
+				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
 				 <h3>Platform</h3>
 				 <ul class="ftr-list">
 					 <li><a href="#">Pc</a></li>
 					 <li><a href="#">Ps4</a></li>
-					 <li><a href="#">XBOX 360</a></li>					 
+					 <li><a href="#">XBOX 360</a></li>
 					 <li><a href="#">XBOX ONE</a></li>
 					 <li><a href="#">PSP</a></li>
-				 </ul>				 
+				 </ul>
 			 </div>
 			 <div class="col-md-3 ftr-grid">
 				 <h3>Information</h3>
-				 <ul class="ftr-list">	
+				 <ul class="ftr-list">
 					 <li><a href="#">Contact Us</a></li>
 					 <li><a href="#">Wish Lists</a></li>
 					 <li><a href="#">Site Map</a></li>
-					 <li><a href="#">Terms & Conditions</a></li>					 
-				 </ul>				 
-			 </div>		
+					 <li><a href="#">Terms & Conditions</a></li>
+				 </ul>
+			 </div>
 			 <div class="clearfix"></div>
 		 </div>
 	 </div>
@@ -270,7 +179,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!---->
 
- 
+
 
 
 </body>
