@@ -33,4 +33,9 @@ class Homepage extends Controller
         $teams = DB::table('teams')->get();
         return view('aboutus',['about'=>$about,'testimonial'=>$testimonials,'teams'=>$teams]);
     }
+
+    public function projectbase()
+    {
+        return view ('project');
+    }
 }
