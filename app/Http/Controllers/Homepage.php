@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Email;
 use App\Models\pictuers;
 use App\Models\profilepics;
 use Illuminate\Http\Request;
@@ -47,7 +48,26 @@ class Homepage extends Controller
 
     public function gallary()
     {
-        return view('gallary');
+        $aboutus = DB::table('gallaries')->get();
+
+        return view('gallary',['gallaries'=>$aboutus]);
+    }
+
+    public function contact()
+    {
+        return view('contactus');
+    }
+
+    public function sendEmail(Request $request)
+    {
+        Email::insert([
+            'name'=>$request->input('w3lName'),
+            'subject'=>$request->input('w3lSubject'),
+            'email'=>$request->input('w3lSender'),
+            'message'=>$request->input('w3lMessage'),
+        ]);
+
+        return redirect()->back();
     }
 }
 

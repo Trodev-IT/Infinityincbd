@@ -27,3 +27,7 @@ Route::get('/projectbase',[Homepage::class,'projectbase'])->name('project');
 Route::get('/singlepage/{id}',[Homepage::class,'singlepage'])->name('singlepage');
 
 Route::get('/photos',[Homepage::class,'gallary'])->name('gallary');
+
+Route::get('/contactus',[Homepage::class,'contact'])->name('contact');
+
+Route::post('/sendEmail',[Homepage::class,'sendEmail'])->name('sendEmail');

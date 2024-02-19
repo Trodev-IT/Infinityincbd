@@ -1,14 +1,12 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Adventure Gaming a Games a Category Flat Bootstarp Responsive Website Template | Gallery :: w3layouts</title>
+    <title>Adventure Gaming a Games a Category Flat Bootstarp Responsive Website Template | Contact :: w3layouts</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
+    <script src="{{asset('js/bootstrap.js')}}"></script>
     <!-- Custom Theme files -->
     <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
-
     <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +16,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
+
 </head>
 <body>
 <!-- header -->
@@ -59,11 +58,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="top-menu">
             <span class="menu"></span>
             <ul class="nav1">
-                <li><a href="{{route('welcome')}}">Home</a></li>
-                <li><a href="{{route('aboutus')}}">About</a></li>
-                <li><a href="{{route('project')}}">Project</a></li>
-                <li class="active"><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Mail</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="typo.html">News</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="active"><a href="contact.html">Mail</a></li>
             </ul>
         </div>
         <!-- script-for-menu -->
@@ -84,29 +84,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <!---->
-<div class="gallery">
+<div class="contact">
     <div class="container">
-        <h2>Gallery</h2>
-        <div class="gallery-bottom">
-            <div class="gallery-1">
-                @foreach($gallaries as $gall)
-                <div class="col-md-3 gallery-grid">
-                    <a class="example-image-link" href="{{asset('storage/'.$gall->photos)}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{asset('storage/'.$gall->photos)}}" alt=""/></a>
+        <div class="contact-head">
+            <h2>Contact</h2>
+            <form action="{{route('sendEmail')}}" method="post">
+                @csrf
+                <div class="col-md-6 contact-left">
+                    <input type="text" class="text" name="w3lName" placeholder="Name" required>
+                    <input type="email" class="text" name="w3lSender" placeholder="Email" required>
+                    <input type="text" class="text" name="w3lSubject" placeholder="Subject" required>
                 </div>
-                @endforeach
-{{--                <div class="col-md-3 gallery-grid">--}}
-{{--                    <a class="example-image-link" href="images/gl7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl7.jpg" alt=""/></a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 gallery-grid">--}}
-{{--                    <a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl4.jpg" alt=""/></a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 gallery-grid">--}}
-{{--                    <a class="example-image-link" href="images/gl5.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl5.jpg" alt=""/></a>--}}
-{{--                </div>--}}
+                <div class="col-md-6 contact-right">
+                    <textarea placeholder="Message" name="w3lMessage"></textarea>
+                    <input type="submit" value="SEND"/>
+                </div>
                 <div class="clearfix"></div>
+            </form>
+        </div>
+        <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12386182.960956775!2d-74.08302114251626!3d40.71866701702417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1436524193425" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="address">
+            <h3>Our Locations</h3>
+            <div class="locations">
+                <ul>
+                    <li><span></span></li>
+                    <li>
+                        <div class="address-info">
+                            <h4>New York, Washington</h4>
+                            <p>10-765 MD-Road</p>
+                            <p>Washington, DC, United States,</p>
+                            <p>Phone: 123 456 7890</p>
+                            <p>Mail: <a href="mailto:info@example.com">info(at)example.com</a></p>
+                            <h5><a href="">Visit on Google Maps >></a></h5>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li><span></span></li>
+                    <li>
+                        <div class="address-info">
+                            <h4>London, UK</h4>
+                            <p>10-765 MD-Road</p>
+                            <p>Lorem ipsum, domon sit, UK,</p>
+                            <p>Phone: 123 456 7890</p>
+                            <p>Mail: <a href="mailto:info@example.com">info(at)example.com</a></p>
+                            <h5><a href="">Visit on Google Maps >></a></h5>
+                        </div>
+                    </li>
+                </ul>
             </div>
-
-
         </div>
     </div>
 </div>
@@ -158,11 +186,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p> © 2020 Adventure Gaming. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
     </div>
 </div>
-
-<script src="{{asset('js/lightbox-plus-jquery.min.js')}}"></script>
-
-
-<script src="{{asset('js/bootstrap.js')}}"></script>
 <!---->
+
+
+
 </body>
 </html>
