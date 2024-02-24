@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\SendMail;
 use App\Models\Email;
 use App\Models\pictuers;
 use App\Models\profilepics;
@@ -60,12 +61,14 @@ class Homepage extends Controller
 
     public function sendEmail(Request $request)
     {
-        Email::insert([
+        $user = Email::insert([
             'name'=>$request->input('w3lName'),
             'subject'=>$request->input('w3lSubject'),
             'email'=>$request->input('w3lSender'),
             'message'=>$request->input('w3lMessage'),
         ]);
+
+        event(new SendMail($user));
 
         return redirect()->back();
     }

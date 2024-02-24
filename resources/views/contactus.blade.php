@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Adventure Gaming a Games a Category Flat Bootstarp Responsive Website Template | Contact :: w3layouts</title>
+    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Contact :: w3layouts</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
     <script src="{{asset('js/bootstrap.js')}}"></script>
@@ -11,7 +11,7 @@
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Adventure Gaming  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+    <meta name="keywords" content="InfinityincBD  Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -53,17 +53,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="banner-info">
     <div class="container">
         <div class="logo">
-            <h1><a href="index.html">Adventure Gaming</a></h1>
+            <h1><a href="{{route('welcome')}}">InfinityincBD</a></h1>
         </div>
         <div class="top-menu">
             <span class="menu"></span>
             <ul class="nav1">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="typo.html">News</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li class="active"><a href="contact.html">Mail</a></li>
+                <li><a href="{{route('welcome')}}">Home</a></li>
+                <li><a href="{{route('aboutus')}}">About</a></li>
+                <li><a href="{{route('project')}}">Projects</a></li>
+                <li><a href="{{route('gallary')}}">Gallery</a></li>
+                <li class="active"><a href="{{route('contact')}}">Mail</a></li>
             </ul>
         </div>
         <!-- script-for-menu -->
@@ -183,7 +182,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---->
 <div class="copywrite">
     <div class="container">
-        <p> © 2020 Adventure Gaming. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+        <p> © 2020 InfinityincBD. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
     </div>
 </div>
 <!---->
