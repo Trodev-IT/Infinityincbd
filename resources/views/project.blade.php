@@ -154,6 +154,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!-- footer -->
 <div class="footer">
+    <div class="container">
+        <div class="footer-grids">
+            <div class="col-sm-8 ftr-info">
+                <h3>About Us</h3>
+                <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus.
+                    Suspendisse pharetra, metus sed rutrum pretium.</p>
+            </div>
+
+            <div class="col-sm-4 ftr-grid">
+                <h3>Information</h3>
+                <ul class="ftr-list">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Wish Lists</a></li>
+                    <li><a href="#">Site Map</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!---->
+<div class="copywrite">
+    <div class="container">
+        <p> © 2020 InfinityincBD. All rights reserved | Developed by <a href="https://trodev.com/">Trodev</a></p>
+    </div>
+</div>
+{{-- <div class="footer">
 	 <div class="container">
 		 <div class="footer-grids">
 			 <div class="col-md-3 ftr-info">
@@ -199,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="container">
 		 <p> © 2020 InfinityincBD. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 	 </div>
-</div>
+</div> --}}
 <!---->
 
 
