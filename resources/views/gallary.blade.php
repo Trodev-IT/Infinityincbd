@@ -18,6 +18,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
+
+    <style>
+        .gallery .container .row {
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        .gallery .container .row .col-md-4 {
+            margin-bottom: 20px; /* Adjust the margin between images as needed */
+        }
+
+        .gallery .container .row .col-md-4 img {
+            width: 100%; /* Adjust the width of images within columns */
+            height: 200px; /* Set a fixed height for all images */
+            object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+        }
+
+    </style>
 </head>
 <body>
 <!-- header -->
@@ -62,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li><a href="{{route('welcome')}}">Home</a></li>
                 <li><a href="{{route('aboutus')}}">About</a></li>
                 <li><a href="{{route('project')}}">Project</a></li>
-                <li class="active"><a href="gallery.html">Gallery</a></li>
+                <li class="active"><a href="{{route('gallary')}}">Gallery</a></li>
                 <li><a href="{{route('contact')}}">Mail</a></li>
             </ul>
         </div>
@@ -84,32 +101,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>
 <!---->
+<!-- gallery -->
 <div class="gallery">
     <div class="container">
         <h2>Gallery</h2>
-        <div class="gallery-bottom">
-            <div class="gallery-1">
-                @foreach($gallaries as $gall)
-                <div class="col-md-3 gallery-grid">
-                    <a class="example-image-link" href="{{asset('storage/'.$gall->photos)}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{asset('storage/'.$gall->photos)}}" alt=""/></a>
-                </div>
-                @endforeach
-{{--                <div class="col-md-3 gallery-grid">--}}
-{{--                    <a class="example-image-link" href="images/gl7.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl7.jpg" alt=""/></a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 gallery-grid">--}}
-{{--                    <a class="example-image-link" href="images/gl4.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl4.jpg" alt=""/></a>--}}
-{{--                </div>--}}
-{{--                <div class="col-md-3 gallery-grid">--}}
-{{--                    <a class="example-image-link" href="images/gl5.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="images/gl5.jpg" alt=""/></a>--}}
-{{--                </div>--}}
-                <div class="clearfix"></div>
+        <div class="row">
+            @foreach($gallaries as $gall)
+            <div class="col-md-4">
+                <a href="{{asset('storage/'.$gall->photos)}}" data-lightbox="gallery"><img src="{{asset('storage/'.$gall->photos)}}" alt="Image 1"></a>
             </div>
+            @endforeach
 
-
+            <!-- Add more images like this -->
         </div>
+
+
     </div>
 </div>
+
 <!-- footer -->
 <div class="footer">
     <div class="container">
