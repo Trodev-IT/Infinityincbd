@@ -111,18 +111,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div class="recent-posts">
 					<h4>Recent posts</h4>
+                    @foreach($proj as $por)
+                        @if($por->id !== $id->id)
 					<div class="recent-posts-info">
 						<div class="posts-left sngl-img">
-							<a href="single.html"> <img src="images/img16.jpg" class="img-responsive zoom-img" alt=""/> </a>
+							<a href="{{route('singlepage',['id'=>$por->id])}}"> <img src="{{asset('storage/'.$por->image)}}" class="img-responsive zoom-img" alt=""/> </a>
 						</div>
 						<div class="posts-right">
-							<label>March 5, 2020</label>
-							<h5><a href="single.html">Finibus Bonorum</a></h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing incididunt.</p>
-							<a href="single.html" class="btn btn-primary hvr-rectangle-in">Read More</a>
+							<label>{{ \Carbon\Carbon::parse($por->created_at)->format('M d, Y') }}
+
+                            </label>
+							<h5><a href="{{route('singlepage',['id'=>$por->id])}}"></a>{{$por->title}}</h5>
+
+							<a href="{{route('singlepage',['id'=>$por->id])}}" class="btn btn-primary hvr-rectangle-in">Read More</a>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
+                        @endif
+                    @endforeach
 					<div class="clearfix"> </div>
 				</div>
 			</div>
