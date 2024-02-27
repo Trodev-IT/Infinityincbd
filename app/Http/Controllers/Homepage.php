@@ -87,6 +87,7 @@ class Homepage extends Controller
         $testimonials = DB::table('testimonials')->get();
 
         $teams = DB::table('teams')->get();
+
         return view('aboutus',['about'=>$about,'testimonial'=>$testimonials,'teams'=>$teams]);
     }
 
