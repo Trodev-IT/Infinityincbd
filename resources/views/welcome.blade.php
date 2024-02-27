@@ -186,44 +186,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 @endforeach
             </div>
-            <div class="col-md-7">
-                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7UHSYC_8YQs?si=FuUAZNnQiG41surc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="col-md-7 trailer">
+                @if(isset($youtube))
+                <iframe src="{!! $youtube->YouTube !!}" frameborder="0" allowfullscreen></iframe>
+                @else
+                    <p>No about information found.</p>
+                @endif
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
 </div>
 <!-- poster -->
-<div class="poster">
+
+@if(isset($pr))
+<div class="poster" style="background:url({{asset('storage/'.$pr->image)}}) no-repeat 0px 0px; position:relative;background-size:cover;">
     <div class="container">
         <div class="poster-info">
-            <h3>Nunc cursus dui in metus efficitur, sit amet ullamcorper dolor viverra.</h3>
-            <p>Proin ornare metus eros, quis mattis lorem venenatis eget. Curabitur eget dui euismod,
-                varius nisl eu, pharetra lacus. Sed vehicula tempor leo. Aenean dictum suscipit magna vel
-                tempus. Aliquam nec dui dolor. Quisque scelerisque aliquet est et dignissim. Morbi magna quam, molestie sed fermentum et, elementum at dolor</p>
-            <a class="hvr-bounce-to-bottom" href="reviews.html">Read More</a>
+            <h3>{{$pr->title}}</h3>
+            <a class="hvr-bounce-to-bottom" href="{{route('singlepage',['id'=>$pr->id])}}">Read More</a>
         </div>
     </div>
 </div>
+@else
+    <p>No about information found.</p>
+@endif
 <!-- x-box -->
-<div class="x-box">
-    <div class="container">
-        <div class="x-box_sec">
-            <div class="col-md-7 x-box-left">
-                <h2>XBOX 360</h2>
-                <h3>Suspendisse ornare nisl et tellus convallis, non vehicula nibh convallis.</h3>
-                <p>Proin ornare metus eros, quis mattis lorem venenatis eget. Curabitur eget dui
-                    euismod, varius nisl eu, pharetra lacus. Sed vehicula tempor leo. Aenean dictum suscipit magna vel tempus.
-                    Aliquam nec dui dolor. Quisque scelerisque aliquet est et dignissim.</p>
-                <a class="hvr-bounce-to-top" href="reviews.html">Read More</a>
+
+
+    @if(isset($pro))
+        @if($pr->id !== $pro->id)
+    <div class="x-box">
+        <div class="container">
+            <div class="x-box_sec">
+                <div class="col-md-7 x-box-left">
+
+                    <h3>{{$pro->title}}</h3>
+                    <a class="hvr-bounce-to-top" href="{{route('singlepage',['id'=>$pro->id])}}">Read More</a>
+                </div>
+                <div class="col-md-5 x-box-right">
+                    <img src="{{asset('storage/'.$pro->image)}}" class="img-responsive" alt=""/>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="col-md-5 x-box-right">
-                <img src="{{asset('images/xbox.jpg')}}" class="img-responsive" alt=""/>
-            </div>
-            <div class="clearfix"></div>
         </div>
     </div>
-</div>
+    @else
+        <p>No about information found.</p>
+    @endif
+@endif
 <!-- footer -->
 <div class="footer">
     <div class="container">

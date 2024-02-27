@@ -93,13 +93,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h2>About</h2>
         <div class="about-info-grids">
             <div class="col-md-5 abt-pic">
-                <img src="{{asset('storage/'.$about->image)}}" class="img-responsive" alt=""/>
+                @if(isset($about))
+                    <img src="{{ asset('storage/'.$about->image) }}" class="img-responsive" alt=""/>
+
+
             </div>
             <div class="col-md-7 abt-info-pic">
                 <h3>{{$about->title}}</h3>
                 <p>{!! $about->subtitle !!}</p>
 
             </div>
+            @else
+                <p>No about information found.</p>
+            @endif
             <div class="clearfix"></div>
         </div>
         <div class="testimonals">

@@ -498,9 +498,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 
 .poster{
-	background:url(../images/pst1.jpg) no-repeat 0px 0px;
-	background-size:cover;
-	position:relative;
+
+	/*background-size:cover;*/
+	/*position:relative;*/
 }
 .poster-info{
 	width:60%;

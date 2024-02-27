@@ -77,7 +77,10 @@ class Homepage extends Controller
                 'updated_at' => Carbon::now('Asia/Dhaka')
             ]);
 
-        return view('welcome',['pics'=>$pics,'top'=>$topgames,'latest'=>$latest,'youtube'=>$youtube]);
+        $project = DB::table('projects')->latest()->first();
+        $project2 = DB::table('projects')->latest()->first();
+
+        return view('welcome',['pics'=>$pics,'top'=>$topgames,'latest'=>$latest,'youtube'=>$youtube,'pr'=>$project, 'pro' =>$project2]);
     }
 
     public function aboutus()
@@ -87,6 +90,7 @@ class Homepage extends Controller
         $testimonials = DB::table('testimonials')->get();
 
         $teams = DB::table('teams')->get();
+
         return view('aboutus',['about'=>$about,'testimonial'=>$testimonials,'teams'=>$teams]);
     }
 
@@ -98,7 +102,8 @@ class Homepage extends Controller
     public function singlepage($id)
     {
         $project=DB::table('projects')->find($id);
-        return view ('singlepage',['id'=>$project]);
+        $allproj = DB::table('projects')->take(2)->get();
+        return view ('singlepage',['id'=>$project,'proj'=>$allproj]);
     }
 
     public function gallary()
