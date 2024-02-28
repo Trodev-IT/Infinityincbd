@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Events\SendMail;
+use App\Events\SubscriberMail;
 use App\Models\Email;
 use App\Models\pictuers;
 use App\Models\profilepics;
+use App\Models\Subcriber;
 use App\Models\VisitorTable;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -130,6 +132,34 @@ class Homepage extends Controller
         event(new SendMail($user));
 
         return redirect()->back();
+    }
+
+    public function subscriber(Request $request)
+    {
+        $email = Subcriber::create([
+            'email'=>$request->input('email'),
+            'subscriber_id' => 'subscriber' . mt_rand(1000, 9999),
+        ]);
+
+        $subscriber_id = $email->id;
+
+        event(new SubscriberMail($subscriber_id));
+
+        return redirect()->back();
+    }
+
+    public function eventsList()
+    {
+        $now = Carbon::now();
+        $event = DB::table('create_events')->get();
+        return view('events',['event'=>$event,'now'=>$now]);
+    }
+
+    public function details_event($id)
+    {
+        $event = DB::table('create_events')->find($id);
+        $events = DB::table('create_events')->get();
+        return view('eventdetails',['event'=>$event,'even'=>$events]);
     }
 }
 

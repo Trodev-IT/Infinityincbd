@@ -1,14 +1,16 @@
-
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+-->
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Gallery :: w3layouts</title>
+    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Reviews :: w3layouts</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
+    <script src="{{asset('js/bootstrap.js')}}"></script>
     <!-- Custom Theme files -->
     <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
-
     <!-- Custom Theme files -->
     <!--//theme-style-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +20,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
-
     <style>
         .gallery .container .row {
             margin-top: 20px; /* Adjust the margin as needed */
@@ -78,8 +79,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="nav1">
                 <li><a href="{{route('welcome')}}">Home</a></li>
                 <li><a href="{{route('aboutus')}}">About</a></li>
-                <li><a href="{{route('project')}}">Project</a></li>
-                <li class="active"><a href="{{route('gallary')}}">Gallery</a></li>
+                <li class="active"><a href="{{route('project')}}">Project</a></li>
+                {{--					 <li><a href="typo.html">News</a></li>--}}
+                <li><a href="{{route('gallary')}}">Gallery</a></li>
                 <li><a href="{{route('contact')}}">Mail</a></li>
             </ul>
         </div>
@@ -100,23 +102,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="bnr2">
     </div>
 </div>
-<!---->
-<!-- gallery -->
+<!-- content -->
 <div class="gallery">
     <div class="container">
-        <h2>Gallery</h2>
-        <div class="row">
-            @foreach($gallaries as $gall)
-            <div class="col-md-4">
-                <a href="{{asset('storage/'.$gall->photos)}}" data-lightbox="gallery"><img src="{{asset('storage/'.$gall->photos)}}" alt="Image 1"></a>
-            </div>
+        <h2>Project</h2>
+
+
+        <div class="review-md1">
+            @foreach($event as $proj)
+                @if($now !== $proj->deadline)
+                <div class="col-md-4 sed-md">
+                    <div class=" col-1">
+                        <a href="{{route('details_event',['id'=>$proj->id])}}"><img class="img-responsive" src="{{asset('storage/'.$proj->event_pictuers)}}" alt=""></a>
+                        <h4><a href="{{route('details_event',['id'=>$proj->id])}}">{{$proj->event_name}}</a></h4>
+                        <h4>Deadline: <span id="deadline_{{$proj->id}}">{{$proj->deadline}}</span></h4>
+                        <p id="countdown_{{$proj->id}}"></p>
+                    </div>
+                </div>
+                @endif
             @endforeach
+            <div class="clearfix"> </div>
         </div>
-
-
     </div>
 </div>
-
 <!-- footer -->
 <div class="footer">
     <div class="container">
@@ -146,11 +154,85 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p> © 2020 InfinityincBD. All rights reserved | Developed by <a href="https://trodev.com/">Trodev</a></p>
     </div>
 </div>
-
-<script src="{{asset('js/lightbox-plus-jquery.min.js')}}"></script>
-
-
-<script src="{{asset('js/bootstrap.js')}}"></script>
+{{-- <div class="footer">
+	 <div class="container">
+		 <div class="footer-grids">
+			 <div class="col-md-3 ftr-info">
+				 <h3>About Us</h3>
+				 <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus.
+				 Suspendisse pharetra, metus sed rutrum pretium.</p>
+			 </div>
+			 <div class="col-md-3 ftr-grid">
+				 <h3>Categories</h3>
+				 <ul class="ftr-list">
+					 <li><a href="#">Action</a></li>
+					 <li><a href="#">Racing</a></li>
+					 <li><a href="#">Adventure</a></li>
+					 <li><a href="#">Simulation</a></li>
+					 <li><a href="#">Bike</a></li>
+				 </ul>
+			 </div>
+			 <div class="col-md-3 ftr-grid">
+				 <h3>Platform</h3>
+				 <ul class="ftr-list">
+					 <li><a href="#">Pc</a></li>
+					 <li><a href="#">Ps4</a></li>
+					 <li><a href="#">XBOX 360</a></li>
+					 <li><a href="#">XBOX ONE</a></li>
+					 <li><a href="#">PSP</a></li>
+				 </ul>
+			 </div>
+			 <div class="col-md-3 ftr-grid">
+				 <h3>Information</h3>
+				 <ul class="ftr-list">
+					 <li><a href="#">Contact Us</a></li>
+					 <li><a href="#">Wish Lists</a></li>
+					 <li><a href="#">Site Map</a></li>
+					 <li><a href="#">Terms & Conditions</a></li>
+				 </ul>
+			 </div>
+			 <div class="clearfix"></div>
+		 </div>
+	 </div>
+</div>
 <!---->
+<div class="copywrite">
+	 <div class="container">
+		 <p> © 2020 InfinityincBD. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+	 </div>
+</div> --}}
+<!---->
+
+<script>
+    // Countdown function
+    function countdown(endDate, elementId) {
+        const deadline = new Date(endDate).getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = deadline - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById(elementId).innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById(elementId).innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    }
+
+    // Initialize countdowns for each project
+    @foreach($event as $proj)
+    countdown("{{$proj->deadline}}", "countdown_{{$proj->id}}");
+    @endforeach
+</script>
+
+
+
 </body>
 </html>

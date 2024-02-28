@@ -31,3 +31,9 @@ Route::get('/photos',[Homepage::class,'gallary'])->name('gallary');
 Route::get('/contactus',[Homepage::class,'contact'])->name('contact');
 
 Route::post('/sendEmail',[Homepage::class,'sendEmail'])->name('sendEmail');
+
+Route::post('/subscriber',[Homepage::class,'subscriber'])->name('subscriber');
+
+Route::get('/events',[Homepage::class,'eventsList'])->name('eventsList');
+
+Route::get('/event-details/{id}',[Homepage::class,'details_event'])->name('details_event');

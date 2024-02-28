@@ -17,6 +17,54 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <script src="{{asset('js/jquery.min.js')}}"></script>
 
+    <style>
+        /* Style for the email subscription section */
+        /* CSS for the email subscription form */
+        .email-subscription {
+            text-align: center; /* Align form content to center */
+            margin-top: 20px; /* Add margin as needed */
+        }
+
+        .email-subscription input[type="email"],
+        .email-subscription button {
+            display: inline-block; /* Make input and button display inline */
+            vertical-align: middle; /* Align elements vertically */
+        }
+
+        .email-subscription input[type="email"] {
+            width: 250px; /* Adjust width as needed */
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .email-subscription button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff; /* Adjust button background color */
+            color: #fff; /* Adjust button text color */
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .email-subscription button:hover {
+            background-color: #0056b3; /* Adjust hover background color */
+        }
+
+        .email-subscription input[type="email"]:focus {
+            border-color: #007bff; /* Adjust border color on focus */
+        }
+
+        .email-subscription button:focus {
+            outline: none;
+        }
+
+
+    </style>
 </head>
 <body>
 <!-- header -->
@@ -62,6 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li class="active"><a href="{{route('welcome')}}">Home</a></li>
                     <li><a href="{{route('aboutus')}}">About</a></li>
                     <li><a href="{{route('project')}}">Projects</a></li>
+                    <li><a href="{{route('eventsList')}}">Events</a></li>
                     <li><a href="{{route('gallary')}}">Gallery</a></li>
                     <li><a href="{{route('contact')}}">Mail</a></li>
                 </ul>
@@ -98,19 +147,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="slider">
     <div class="callbacks_container">
         <ul class="rslides" id="slider">
-
             @foreach($pics as $pi)
-            <div class="slid">
-                <img src="{{asset('storage/'.$pi->pics)}}"  alt=""/>
-                <div class="caption">
-                    <h3>{{$pi->title}}</h3>
-                    <p>{{$pi->subtitle}}</p>
+                <div class="slid">
+                    <img src="{{asset('storage/'.$pi->pics)}}" alt=""/>
+                    <div class="caption">
+                        <h3>{{$pi->title}}</h3>
+                        <p>{{$pi->subtitle}}</p>
+                    </div>
                 </div>
-            </div>
             @endforeach
         </ul>
+        <div class="email-subscription">
+            <form action="{{route('subscriber')}}" method="post">
+                @csrf
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe now for exclusive updates!</button>
+            </form>
+        </div>
     </div>
 </div>
+
+
+
 
 <!-- content -->
 <div class="content">
@@ -180,7 +238,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="col-md-8 sub-text">
                         <a href="#">{{$games->title}}</a>
-
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -214,8 +271,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- x-box -->
 
 
-    @if(isset($pro))
-        @if($pr->id !== $pro->id)
+
     <div class="x-box">
         <div class="container">
             <div class="x-box_sec">
@@ -228,21 +284,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <img src="{{asset('storage/'.$pro->image)}}" class="img-responsive" alt=""/>
                 </div>
                 <div class="clearfix"></div>
+
+
             </div>
         </div>
     </div>
-    @else
-        <p>No about information found.</p>
-    @endif
-@endif
+
+<!-- footer -->
 <!-- footer -->
 <div class="footer">
     <div class="container">
         <div class="footer-grids">
             <div class="col-sm-8 ftr-info">
                 <h3>About Us</h3>
-                <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus.
-                    Suspendisse pharetra, metus sed rutrum pretium.</p>
+                <p>Sed faucibus mollis laoreet. Sed vehicula faucibus tristique lectus a orci molestie finibus. Suspendisse pharetra, metus sed rutrum pretium.</p>
             </div>
 
             <div class="col-sm-4 ftr-grid">
@@ -254,10 +309,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="#">Terms & Conditions</a></li>
                 </ul>
             </div>
+
+
+
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
+
+
 <!---->
 <div class="copywrite">
     <div class="container">
