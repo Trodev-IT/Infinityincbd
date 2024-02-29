@@ -161,5 +161,11 @@ class Homepage extends Controller
         $events = DB::table('create_events')->get();
         return view('eventdetails',['event'=>$event,'even'=>$events]);
     }
+
+    public function eventregister($id)
+    {
+        $event = DB::table('create_events')->find($id);
+        return view('eventregistration',['event'=>$event]);
+    }
 }
 

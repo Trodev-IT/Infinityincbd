@@ -37,3 +37,5 @@ Route::post('/subscriber',[Homepage::class,'subscriber'])->name('subscriber');
 Route::get('/events',[Homepage::class,'eventsList'])->name('eventsList');
 
 Route::get('/event-details/{id}',[Homepage::class,'details_event'])->name('details_event');
+
+Route::get('/event-register/{id}',[Homepage::class,'eventregister'])->name('eventregister');
