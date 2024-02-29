@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\SendMail;
 use App\Events\SubscriberMail;
 use App\Models\Email;
+use App\Models\EventRegister;
 use App\Models\pictuers;
 use App\Models\profilepics;
 use App\Models\Subcriber;
@@ -166,6 +167,42 @@ class Homepage extends Controller
     {
         $event = DB::table('create_events')->find($id);
         return view('eventregistration',['event'=>$event]);
+    }
+
+    public function registerEvent(Request $request)
+    {
+        $eventid = $request->input('event_id');
+        $eventname = $request->input('event_name');
+        $username = $request->input('name');
+        $email = $request->input('email');
+        $phone = $request->input('phone');
+        $payment = $request->input('payment');
+        $transaction = $request->input('transaction');
+
+        $insert = EventRegister::create([
+            'slno'=>$request->input('id'),
+            'event_id'=>$eventid,
+            'player_name'=>$username,
+            'player_email'=>$email,
+            'player_phone'=>$phone,
+            'payment'=>$payment,
+            'transaction'=>$transaction,
+            'status'=>'Processing',
+        ]);
+
+        $id = $insert->id;
+
+        return redirect()->route('paymentsuccess',['id'=>$id]);
+    }
+
+    public function paymentsuccess($id)
+    {
+        $user = EventRegister::find($id);
+        $eventname = DB::table('event_registers')->join('create_events', 'event_registers.event_id', '=', 'create_events.event_id')
+            ->where('event_registers.id', $id)
+            ->select('create_events.event_name as event_name')
+            ->first();
+        return view('paymentsuccessful',['id'=>$user,'name'=>$eventname]);
     }
 }
 

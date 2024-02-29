@@ -92,7 +92,8 @@
                                     <small class="text-muted float-end">Default label</small>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form action="{{route('registerEvent',['id'=>$event->id])}}" method="post">
+                                        @csrf
                                         <input type="hidden" name="id" value="{{$event->id}}">
                                         <div class="row mb-3">
                                             <label class="col-sm-2 col-form-label" for="basic-default-name">Event Id</label>
@@ -103,7 +104,7 @@
                                         <div class="row mb-3">
                                             <label class="col-sm-2 col-form-label" for="basic-default-name">Event Name</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="basic-default-name" value="{{$event->event_name}}" readonly />
+                                                <input type="text" class="form-control" name="event_name" id="basic-default-name" value="{{$event->event_name}}" readonly />
                                             </div>
                                         </div>
                                         <div class="row mb-3">

@@ -39,3 +39,7 @@ Route::get('/events',[Homepage::class,'eventsList'])->name('eventsList');
 Route::get('/event-details/{id}',[Homepage::class,'details_event'])->name('details_event');
 
 Route::get('/event-register/{id}',[Homepage::class,'eventregister'])->name('eventregister');
+
+Route::post('/registerEvent',[Homepage::class,'registerEvent'])->name('registerEvent');
+
+Route::get('/payment-successful/{id}',[Homepage::class,'paymentsuccess'])->name('paymentsuccess');
