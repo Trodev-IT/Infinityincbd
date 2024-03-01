@@ -171,28 +171,53 @@ class Homepage extends Controller
 
     public function registerEvent(Request $request)
     {
-        $eventid = $request->input('event_id');
-        $eventname = $request->input('event_name');
-        $username = $request->input('name');
-        $email = $request->input('email');
-        $phone = $request->input('phone');
-        $payment = $request->input('payment');
-        $transaction = $request->input('transaction');
+        if ($request->input('price') > 0) {
+            $eventid = $request->input('event_id');
+            $eventname = $request->input('event_name');
+            $username = $request->input('name');
+            $email = $request->input('email');
+            $phone = $request->input('phone');
+            $payment = $request->input('payment');
+            $transaction = $request->input('transaction');
 
-        $insert = EventRegister::create([
-            'slno'=>$request->input('id'),
-            'event_id'=>$eventid,
-            'player_name'=>$username,
-            'player_email'=>$email,
-            'player_phone'=>$phone,
-            'payment'=>$payment,
-            'transaction'=>$transaction,
-            'status'=>'Processing',
-        ]);
+            $insert = EventRegister::create([
+                'slno' => $request->input('id'),
+                'event_id' => $eventid,
+                'player_name' => $username,
+                'player_email' => $email,
+                'player_phone' => $phone,
+                'payment' => $payment,
+                'transaction' => $transaction,
+                'status' => 'Processing',
+            ]);
 
-        $id = $insert->id;
+            $id = $insert->id;
 
-        return redirect()->route('paymentsuccess',['id'=>$id]);
+            return redirect()->route('paymentsuccess', ['id' => $id]);
+        }
+
+        else{
+            $eventid = $request->input('event_id');
+            $eventname = $request->input('event_name');
+            $username = $request->input('name');
+            $email = $request->input('email');
+            $phone = $request->input('phone');
+            $payment = $request->input('payment');
+            $transaction = $request->input('transaction');
+
+            $insert = EventRegister::create([
+                'slno' => $request->input('id'),
+                'event_id' => $eventid,
+                'player_name' => $username,
+                'player_email' => $email,
+                'player_phone' => $phone,
+                'status' => 'Successfull',
+            ]);
+
+            $id = $insert->id;
+
+            return redirect()->route('welcome');
+        }
     }
 
     public function paymentsuccess($id)

@@ -131,8 +131,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <p class="snglp">{!! $event->event_details !!}</p>
 
-{{--                    <a href="#" id="registerButton" class="btn btn-lg">Register</a>--}}
-                    <a href="{{route('eventregister',['id'=>$event->id])}}" class="btn btn-lg">Register</a>
+
+                    <a href="{{route('eventregister',['id'=>$event->id])}}" id="registerButton" class="btn btn-lg">Register</a>
                 </div>
                 <div style="margin: 0 auto; text-align: center;">
                     <ul>

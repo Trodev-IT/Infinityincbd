@@ -153,31 +153,33 @@
                                         <div class="row mb-3">
                                             <label class="col-sm-2 col-form-label" for="basic-default-name">Registration Price</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="basic-default-name" placeholder="John Doe" />
+                                                <input type="text" class="form-control" id="basic-default-name" name="price" value="{{$event->price}}" placeholder="John Doe" />
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="basic-default-name">Pay With</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-select" id="basic-default-name" name="payment">
-                                                    <option value="" selected disabled>Select Payment Method</option>
-                                                    <option value="bKash">bKash</option>
-                                                    <option value="Nagad">Nagad</option>
-                                                    <option value="Rocket">Rocket</option>
-                                                    <option value="bank_transfer">Bank Transfer</option>
+                                        @if($event->price > 0)
+                                            <div class="row mb-3">
+                                                <label class="col-sm-2 col-form-label" for="basic-default-name">Pay With</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-select" id="basic-default-name" name="payment">
+                                                        <option value="" selected disabled>Select Payment Method</option>
+                                                        <option value="bKash">bKash</option>
+                                                        <option value="Nagad">Nagad</option>
+                                                        <option value="Rocket">Rocket</option>
+                                                        <option value="bank_transfer">Bank Transfer</option>
 
-                                                </select>
-                                                <div class="form-text">You can use letters, numbers & periods</div>
+                                                    </select>
+                                                    <div class="form-text">You can use letters, numbers & periods</div>
+                                                </div>
+
                                             </div>
 
-                                        </div>
-
-                                        <div class="row mb-3">
-                                            <label class="col-sm-2 col-form-label" for="basic-default-name">Transaction Id</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" name="transaction" id="basic-default-name" placeholder="John Doe" />
+                                            <div class="row mb-3">
+                                                <label class="col-sm-2 col-form-label" for="basic-default-name">Transaction Id</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="transaction" id="basic-default-name" placeholder="John Doe" />
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                         <div class="row justify-content-end">
                                             <div class="col-sm-10">
                                                 <button type="submit" class="btn btn-primary">Send</button>

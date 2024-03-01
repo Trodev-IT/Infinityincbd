@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('player_name');
             $table->string('player_email')->unique();
             $table->integer('player_phone')->unique();
-            $table->string('payment');
-            $table->string('transaction');
+            $table->string('payment')->nullable();
+            $table->string('transaction')->nullable();
             $table->string('status');
             $table->timestamps();
         });
