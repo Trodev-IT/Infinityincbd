@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class EventRegister extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'slno',
         'event_id',

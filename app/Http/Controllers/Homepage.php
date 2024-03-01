@@ -81,7 +81,7 @@ class Homepage extends Controller
             ]);
 
         $project = DB::table('projects')->latest()->first();
-        $project2 = DB::table('projects')->latest()->first();
+        $project2 = DB::table('create_events')->latest()->first();
 
         return view('welcome',['pics'=>$pics,'top'=>$topgames,'latest'=>$latest,'youtube'=>$youtube,'pr'=>$project, 'pro' =>$project2]);
     }
@@ -171,52 +171,57 @@ class Homepage extends Controller
 
     public function registerEvent(Request $request)
     {
-        if ($request->input('price') > 0) {
-            $eventid = $request->input('event_id');
-            $eventname = $request->input('event_name');
-            $username = $request->input('name');
-            $email = $request->input('email');
-            $phone = $request->input('phone');
-            $payment = $request->input('payment');
-            $transaction = $request->input('transaction');
+        $check = EventRegister::where('player_email',$request->input('email'))
+            ->where('player_phone',$request->input('phone'))->where('event_id',$request->input('event_id'))->first();
+        if (!$check) {
+            if ($request->input('price') > 0) {
+                $eventid = $request->input('event_id');
+                $eventname = $request->input('event_name');
+                $username = $request->input('name');
+                $email = $request->input('email');
+                $phone = $request->input('phone');
+                $payment = $request->input('payment');
+                $transaction = $request->input('transaction');
 
-            $insert = EventRegister::create([
-                'slno' => $request->input('id'),
-                'event_id' => $eventid,
-                'player_name' => $username,
-                'player_email' => $email,
-                'player_phone' => $phone,
-                'payment' => $payment,
-                'transaction' => $transaction,
-                'status' => 'Processing',
-            ]);
+                $insert = EventRegister::create([
+                    'slno' => $request->input('id'),
+                    'event_id' => $eventid,
+                    'player_name' => $username,
+                    'player_email' => $email,
+                    'player_phone' => $phone,
+                    'payment' => $payment,
+                    'transaction' => $transaction,
+                    'status' => 'Processing',
+                ]);
 
-            $id = $insert->id;
+                $id = $insert->id;
 
-            return redirect()->route('paymentsuccess', ['id' => $id]);
+                return redirect()->route('paymentsuccess', ['id' => $id]);
+            } else {
+                $eventid = $request->input('event_id');
+                $eventname = $request->input('event_name');
+                $username = $request->input('name');
+                $email = $request->input('email');
+                $phone = $request->input('phone');
+                $payment = $request->input('payment');
+                $transaction = $request->input('transaction');
+
+                $insert = EventRegister::create([
+                    'slno' => $request->input('id'),
+                    'event_id' => $eventid,
+                    'player_name' => $username,
+                    'player_email' => $email,
+                    'player_phone' => $phone,
+                    'status' => 'Successfull',
+                ]);
+
+                $id = $insert->id;
+
+                return redirect()->route('welcome');
+            }
         }
-
         else{
-            $eventid = $request->input('event_id');
-            $eventname = $request->input('event_name');
-            $username = $request->input('name');
-            $email = $request->input('email');
-            $phone = $request->input('phone');
-            $payment = $request->input('payment');
-            $transaction = $request->input('transaction');
-
-            $insert = EventRegister::create([
-                'slno' => $request->input('id'),
-                'event_id' => $eventid,
-                'player_name' => $username,
-                'player_email' => $email,
-                'player_phone' => $phone,
-                'status' => 'Successfull',
-            ]);
-
-            $id = $insert->id;
-
-            return redirect()->route('welcome');
+            return redirect()->back()->with('error','You already register with this email for this event. Try different email and phone.');
         }
     }
 

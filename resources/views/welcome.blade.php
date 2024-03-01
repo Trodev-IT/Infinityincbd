@@ -63,6 +63,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             outline: none;
         }
 
+        .countdown {
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
 
     </style>
 </head>
@@ -271,17 +281,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- x-box -->
 
 
-
+@if(isset($pro))
     <div class="x-box">
         <div class="container">
             <div class="x-box_sec">
                 <div class="col-md-7 x-box-left">
 
-                    <h3>{{$pro->title}}</h3>
-                    <a class="hvr-bounce-to-top" href="{{route('singlepage',['id'=>$pro->id])}}">Read More</a>
+                    <h3>{{$pro->event_name}}</h3><br>
+                    <h4 id="countdown" class="countdown"></h4><br>
+
+                    <a class="hvr-bounce-to-top" href="{{route('details_event',['id'=>$pro->id])}}">Read More</a>
                 </div>
                 <div class="col-md-5 x-box-right">
-                    <img src="{{asset('storage/'.$pro->image)}}" class="img-responsive" alt=""/>
+                    <img src="{{asset('storage/'.$pro->event_pictuers)}}" class="img-responsive" alt=""/>
                 </div>
                 <div class="clearfix"></div>
 
@@ -289,6 +301,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
         </div>
     </div>
+@else
+    <h1>No Events is updated.</h1>
+@endif
 
 <!-- footer -->
 <!-- footer -->
@@ -324,6 +339,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <p> © 2020 InfinityincBD. All rights reserved | Developed by <a href="https://trodev.com/">Trodev</a></p>
     </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<script>
+    // Set the deadline
+    var deadline = "{{ $pro->deadline }}"; // Assuming $pro->deadline is in a format parseable by Moment.js
+
+    var x = setInterval(function() {
+        var now = moment();
+        var distance = moment(deadline).diff(now);
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+            var readMoreLink = document.querySelector(".hvr-bounce-to-top");
+            readMoreLink.removeAttribute("href");
+            readMoreLink.style.pointerEvents = "none";
+        }
+    }, 1000);
+
+</script>
 <!---->
 </body>
 </html>

@@ -90,8 +90,17 @@
                                 <div class="card-header d-flex align-items-center justify-content-between">
                                     <h5 class="mb-0">Basic Layout</h5>
                                     <small class="text-muted float-end">Default label</small>
+
                                 </div>
+
+
+
                                 <div class="card-body">
+                                    @if(session('error'))
+                                        <div class="alert alert-danger">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
                                     <form action="{{route('registerEvent',['id'=>$event->id])}}" method="post">
                                         @csrf
                                         <input type="hidden" name="id" value="{{$event->id}}">
@@ -153,7 +162,7 @@
                                         <div class="row mb-3">
                                             <label class="col-sm-2 col-form-label" for="basic-default-name">Registration Price</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="basic-default-name" name="price" value="{{$event->price}}" placeholder="John Doe" />
+                                                <input type="text" class="form-control" id="basic-default-name" name="price" value="{{$event->price}}" readonly/>
                                             </div>
                                         </div>
                                         @if($event->price > 0)

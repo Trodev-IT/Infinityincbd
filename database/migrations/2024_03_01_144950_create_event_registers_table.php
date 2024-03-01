@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('slno');
             $table->integer('event_id');
             $table->string('player_name');
-            $table->string('player_email')->unique();
-            $table->integer('player_phone')->unique();
+            $table->string('player_email');
+            $table->integer('player_phone');
             $table->string('payment')->nullable();
             $table->string('transaction')->nullable();
             $table->string('status');
