@@ -43,3 +43,8 @@ Route::get('/event-register/{id}',[Homepage::class,'eventregister'])->name('even
 Route::post('/registerEvent',[Homepage::class,'registerEvent'])->name('registerEvent');
 
 Route::get('/payment-successful/{id}',[Homepage::class,'paymentsuccess'])->name('paymentsuccess');
+
+
+
+Route::post('/check-email-availability', [Homepage::class, 'checkEmailAvailability'])->name('check-email-availability');
+

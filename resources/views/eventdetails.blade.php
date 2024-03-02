@@ -5,7 +5,7 @@ Author URL: http://w3layouts.com
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Single :: w3layouts</title>
+    <title>Event Details | Infinity Incorporation Bangladesh</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
     <script src="{{asset('js/bootstrap.js')}}"></script>
@@ -97,8 +97,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="nav1">
                 <li><a href="{{route('welcome')}}">Home</a></li>
                 <li><a href="{{route('aboutus')}}">About</a></li>
-                <li class="active"><a href="{{route('project')}}">Project</a></li>
+                <li><a href="{{route('project')}}">Project</a></li>
                 {{--					 <li><a href="typo.html">News</a></li>--}}
+                <li class="active"><a href="{{route('eventsList')}}">Events</a></li>
                 <li><a href="{{route('gallary')}}">Gallery</a></li>
                 <li><a href="{{route('contact')}}">Mail</a></li>
             </ul>
@@ -132,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <p class="snglp">{!! $event->event_details !!}</p>
 
 
-                    <a href="{{route('eventregister',['id'=>$event->id])}}" id="registerButton" class="btn btn-lg">Register</a>
+                    <a href="{{route('eventregister',['id'=>$event->id])}}" target="_blank" id="registerButton" class="btn btn-lg">Register</a>
 {{--                    <a href="{{route('eventregister',['id'=>$event->id])}}"  class="btn btn-lg">Register</a>--}}
                 </div>
                 <div style="margin: 0 auto; text-align: center;">

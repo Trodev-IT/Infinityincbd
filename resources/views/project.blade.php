@@ -5,7 +5,7 @@ Author URL: http://w3layouts.com
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Reviews :: w3layouts</title>
+<title>Project | Infinity Incorporation Bangladesh</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary JavaScript plugins) -->
 <script src="js/bootstrap.js"></script>
@@ -66,6 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <li><a href="{{route('aboutus')}}">About</a></li>
 					 <li class="active"><a href="{{route('project')}}">Project</a></li>
 {{--					 <li><a href="typo.html">News</a></li>--}}
+                  <li><a href="{{route('eventsList')}}">Events</a></li>
 					 <li><a href="{{route('gallary')}}">Gallery</a></li>
 					 <li><a href="{{route('contact')}}">Mail</a></li>
 			  </ul>

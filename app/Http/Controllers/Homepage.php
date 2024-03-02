@@ -152,14 +152,15 @@ class Homepage extends Controller
     public function eventsList()
     {
         $now = Carbon::now();
-        $event = DB::table('create_events')->get();
+        $event = DB::table('create_events')->where('deadline','>=',$now)->get();
         return view('events',['event'=>$event,'now'=>$now]);
     }
 
     public function details_event($id)
     {
+        $now = Carbon::now();
         $event = DB::table('create_events')->find($id);
-        $events = DB::table('create_events')->get();
+        $events = DB::table('create_events')->where('deadline','>=',$now)->get();
         return view('eventdetails',['event'=>$event,'even'=>$events]);
     }
 
@@ -223,6 +224,15 @@ class Homepage extends Controller
         else{
             return redirect()->back()->with('error','You already register with this email for this event. Try different email and phone.');
         }
+    }
+
+    public function checkEmailAvailability(Request $request)
+    {
+        $check = EventRegister::where('player_email', $request->input('email'))
+            ->where('event_id', $request->input('event_id'))
+            ->exists();
+
+        return response()->json(['available' => !$check]);
     }
 
     public function paymentsuccess($id)

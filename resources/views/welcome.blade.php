@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
+    <title>Infinity Incorporation Bangladesh</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
     <script src="{{asset('js/bootstrap.js')}}"></script>

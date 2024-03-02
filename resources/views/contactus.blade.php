@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Contact :: w3layouts</title>
+    <title>Contact Us | Infinity Incorporation Bangladesh</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
     <script src="{{asset('js/bootstrap.js')}}"></script>
@@ -61,6 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li><a href="{{route('welcome')}}">Home</a></li>
                 <li><a href="{{route('aboutus')}}">About</a></li>
                 <li><a href="{{route('project')}}">Projects</a></li>
+                <li><a href="{{route('eventsList')}}">Events</a></li>
                 <li><a href="{{route('gallary')}}">Gallery</a></li>
                 <li class="active"><a href="{{route('contact')}}">Mail</a></li>
             </ul>

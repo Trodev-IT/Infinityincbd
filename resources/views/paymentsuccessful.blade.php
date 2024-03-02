@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="format-detection" content="telephone=no">
-    <title>GO Email Templates: Generic Template</title>
+    <title>Payment Transfer | Infinity Incorporation Bangladesh</title>
 
 </head>
 <body bgcolor="#d7d7d7" class="generic-template" style="-moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; background-color: #d7d7d7; margin: 0; padding: 0;">
@@ -72,13 +72,13 @@
                 <tr align="left">
                     <td width="36" style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;"></td>
                     <td style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 16px; vertical-align: top;">
-                        <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">Your transaction was successful!</p>
+                        <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">Your transaction was received!</p>
                         <br>
                         <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0; "><strong>Payment Details:</strong><br/>
 
                             Event Id: {{$id->event_id}} <br/>
                             Event Name: {{$name->event_name}} <br/>
-                            <strong>Token: {{$id->status}}.</strong><br/></p>
+                            <strong>Status: {{$id->status}}.</strong><br/></p>
                         <br>
                         <p style="color: #464646; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 22px; margin: 0;">You will get an email for successfull payment.&nbsp;&nbsp;&nbsp;&nbsp;<br/></p>
                     </td>

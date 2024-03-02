@@ -5,7 +5,7 @@ Author URL: http://w3layouts.com
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>InfinityincBD a Games a Category Flat Bootstarp Responsive Website Template | Reviews :: w3layouts</title>
+    <title>Events | Infinity Incorporation Bangladesh</title>
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
     <script src="{{asset('js/bootstrap.js')}}"></script>
@@ -79,8 +79,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <ul class="nav1">
                 <li><a href="{{route('welcome')}}">Home</a></li>
                 <li><a href="{{route('aboutus')}}">About</a></li>
-                <li class="active"><a href="{{route('project')}}">Project</a></li>
+                <li><a href="{{route('project')}}">Project</a></li>
                 {{--					 <li><a href="typo.html">News</a></li>--}}
+                <li class="active"><a href="{{route('eventsList')}}">Events</a></li>
                 <li><a href="{{route('gallary')}}">Gallery</a></li>
                 <li><a href="{{route('contact')}}">Mail</a></li>
             </ul>
@@ -110,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
         <div class="review-md1">
             @foreach($event as $proj)
-                @if($now !== $proj->deadline)
+
                 <div class="col-md-4 sed-md">
                     <div class=" col-1">
                         <a href="{{route('details_event',['id'=>$proj->id])}}"><img class="img-responsive" src="{{asset('storage/'.$proj->event_pictuers)}}" alt=""></a>
@@ -119,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <p id="countdown_{{$proj->id}}"></p>
                     </div>
                 </div>
-                @endif
+
             @endforeach
             <div class="clearfix"> </div>
         </div>

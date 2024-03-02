@@ -27,7 +27,7 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Horizontal Layouts - Forms | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Event Registration | Infinity Incorporation Bangladesh</title>
 
     <meta name="description" content="" />
 
@@ -41,6 +41,7 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet"
     />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="{{asset('admin/assets/vendor/fonts/boxicons.css')}}" />
@@ -61,6 +62,17 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{asset('admin/assets/js/config.js')}}"></script>
+
+    <style>
+        .available {
+            color: green; /* Change the color to your desired color for available message */
+        }
+
+        .unavailable {
+            color: red; /* Change the color to your desired color for unavailable message */
+        }
+
+    </style>
 </head>
 
 <body>
@@ -77,10 +89,10 @@
                                     <h5 class="mb-xl-4">Payment Instructions</h5>
                                     <p>Choose your preferred payment method below and follow the instructions accordingly:</p>
                                     <ul>
-                                        <li><strong>bKash:</strong> Make payment to [bKash Number].</li>
-                                        <li><strong>Nagad:</strong> Make payment to [Nagad Number].</li>
-                                        <li><strong>Rocket:</strong> Make payment to [Rocket Number].</li>
-                                        <li><strong>Bank Transfer:</strong> Transfer the amount to [Bank Account details].</li>
+                                        <li><strong>bKash:</strong> Make payment to [bKash Number]. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
+                                        <li><strong>Nagad:</strong> Make payment to [Nagad Number]. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
+                                        <li><strong>Rocket:</strong> Make payment to [Rocket Number]. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -124,7 +136,7 @@
                                                     name="name"
                                                     class="form-control"
                                                     id="basic-default-company"
-                                                    placeholder="ACME Inc."
+
                                                 />
                                             </div>
                                         </div>
@@ -137,14 +149,14 @@
                                                         name="email"
                                                         id="basic-default-email"
                                                         class="form-control"
-                                                        placeholder="john.doe"
-                                                        aria-label="john.doe"
                                                         aria-describedby="basic-default-email2"
+                                                        onkeyup="checkEmailAvailability(this.value)"
                                                     />
                                                 </div>
-                                                <div class="form-text">You can use letters, numbers & periods</div>
+                                                <div class="form-text" id="emailAvailabilityMsg"></div>
                                             </div>
                                         </div>
+
                                         <div class="row mb-3">
                                             <label class="col-sm-2 col-form-label" for="basic-default-phone">Phone No</label>
                                             <div class="col-sm-10">
@@ -174,7 +186,6 @@
                                                         <option value="bKash">bKash</option>
                                                         <option value="Nagad">Nagad</option>
                                                         <option value="Rocket">Rocket</option>
-                                                        <option value="bank_transfer">Bank Transfer</option>
 
                                                     </select>
                                                     <div class="form-text">You can use letters, numbers & periods</div>
@@ -229,6 +240,41 @@
 
 <!-- Main JS -->
 <script src="{{asset('admin/assets/js/main.js')}}"></script>
+
+
+
+<script>
+    let typingTimer;
+    const doneTypingInterval = 500; // in milliseconds
+
+    function checkEmailAvailability(email) {
+        clearTimeout(typingTimer);
+        if (email) {
+            typingTimer = setTimeout(function() {
+                $.ajax({
+                    url: '{{ route("check-email-availability") }}',
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+
+                    data: {
+                        email: email,
+                        event_id: {{$event->event_id}} // Replace with your actual event ID
+                    },
+                    success: function(response) {
+                        if (response.available) {
+                            $('#emailAvailabilityMsg').html('<span class="available">You can register this event.</span>');
+                        } else {
+                            $('#emailAvailabilityMsg').html('<span class="unavailable">This email is already registered for this event. Please try a different email.</span>');
+                        }
+                    }
+                });
+            }, doneTypingInterval);
+        }
+    }
+
+</script>
 
 <!-- Page JS -->
 
