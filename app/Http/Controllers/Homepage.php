@@ -192,7 +192,7 @@ class Homepage extends Controller
                     'player_phone' => $phone,
                     'payment' => $payment,
                     'transaction' => $transaction,
-                    'status' => 'Processing',
+                    'status' => 'Pending',
                 ]);
 
                 $id = $insert->id;
@@ -213,7 +213,7 @@ class Homepage extends Controller
                     'player_name' => $username,
                     'player_email' => $email,
                     'player_phone' => $phone,
-                    'status' => 'Successfull',
+                    'status' => 'Confirmed',
                 ]);
 
                 $id = $insert->id;

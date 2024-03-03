@@ -26,37 +26,31 @@ Author URL: http://w3layouts.com
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-<script src="js/jquery.min.js"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
 
 </head>
 <body>
 <!-- header -->
 <div class="header">
 	 <div class="container">
-		 <div class="headr-left">
-			 <div class="social">
-					<a href="#"><i class="facebook"></i></a>
-					<a href="#"><i class="twitter"></i></a>
-					<a href="#"><i class="gplus"></i></a>
-					<a href="#"><i class="pin"></i></a>
-					<a href="#"><i class="youtube"></i></a>
-			 </div>
-			 <div class="search">
-				 <form>
-					 <input type="submit" value="">
-					 <input type="text" value="" placeholder="Search...">
-				 </form>
-			 </div>
-			 <div class="clearfix"></div>
-		 </div>
-		 <div class="headr-right">
-			 <div class="details">
-				 <ul>
-					 <li><a href="mailto@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info(at)example.com</a></li>
-					 <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>(+1)000 123 456789</li>
-				 </ul>
-			 </div>
-		 </div>
+         <div class="headr-left">
+             <div class="social">
+                 <a href="https://www.facebook.com/InfinityIncorporationBD?mibextid=ZbWKwL"><i class="facebook"></i></a>
+                 {{--                    <a href="#"><i class="twitter"></i></a>--}}
+                 {{--                    <a href="#"><i class="gplus"></i></a>--}}
+                 {{--                    <a href="#"><i class="pin"></i></a>--}}
+                 {{--                    <a href="#"><i class="youtube"></i></a>--}}
+             </div>
+
+         </div>
+         <div class="headr-right">
+             <div class="details">
+                 <ul>
+                     <li><a href="mailto:infinitybdofficial@gmail.com"><span class="glyphicon glyphicon-envelope"></span>infinitybdofficial@gmail</a></li>
+                     <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+8801828690125</li>
+                 </ul>
+             </div>
+         </div>
 		 <div class="clearfix"></div>
 	 </div>
 </div>

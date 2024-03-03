@@ -95,9 +95,9 @@
                                     <h5 class="mb-xl-4">Payment Instructions</h5>
                                     <p>Choose your preferred payment method below and follow the instructions accordingly:</p>
                                     <ul>
-                                        <li><strong>bKash:</strong> Make payment to [bKash Number]. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
-                                        <li><strong>Nagad:</strong> Make payment to [Nagad Number]. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
-                                        <li><strong>Rocket:</strong> Make payment to [Rocket Number]. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
+                                        <li><strong>bKash:</strong> Make payment to <strong>+8801828690125</strong>. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
+                                        <li><strong>Nagad:</strong> Make payment to <strong>+8801828690125</strong>. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
+                                        <li><strong>Rocket:</strong> Make payment to <strong>+8801828690125</strong>. Enter the event id in ther reference. After payment enter the transaction number into the <strong>Transaction Id</strong></li>
 
                                     </ul>
                                 </div>
