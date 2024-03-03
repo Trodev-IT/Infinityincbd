@@ -6,6 +6,13 @@
     <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary JavaScript plugins) -->
     <!-- Custom Theme files -->
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon/favicon.ico')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon/android-chrome-192x192.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon/android-chrome-512x512.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon/apple-touch-icon.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon/favicon-16x16.png')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon/favicon-32x32.png')}}" />
+    <link rel="manifest" href="{{asset('admin/assets/img/favicon/site.webmanifest')}}" />
     <link href="{{asset('css/style.css')}}" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="{{asset('css/lightbox.css')}}">
 
@@ -48,13 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <a href="#"><i class="pin"></i></a>
                 <a href="#"><i class="youtube"></i></a>
             </div>
-            <div class="search">
-                <form>
-                    <input type="submit" value="">
-                    <input type="text" value="" placeholder="Search...">
-                </form>
-            </div>
-            <div class="clearfix"></div>
+
         </div>
         <div class="headr-right">
             <div class="details">
